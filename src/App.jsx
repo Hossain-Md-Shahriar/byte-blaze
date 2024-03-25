@@ -1,11 +1,15 @@
-function App() {
+import Blogs from "./assets/pages/Blogs";
+import Bookmarks from "./assets/pages/Bookmarks";
+import Home from "./assets/pages/Home";
 
+function App() {
   return (
     <>
-    <h1 className='text-5xl font-black'>Hello World!</h1>
-    <button className='btn'>Click</button>
+      <Home />
+      <Blogs />
+      <Bookmarks />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
