@@ -5,7 +5,7 @@ import Bookmarks from "../pages/Bookmarks.jsx";
 import MainLayout from "../layouts/MainLayout";
 import Blog from "../pages/Blog";
 import Content from "../components/Content.jsx";
-import Author from "../pages/Author.jsx";
+import Author from "../components/Author.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -30,10 +30,14 @@ export const router = createBrowserRouter([
           {
             index: true,
             element: <Content />,
+            loader: ({ params }) =>
+              fetch(`https://dev.to/api/articles/${params.id}`),
           },
           {
             path: "author",
             element: <Author />,
+            loader: ({ params }) =>
+              fetch(`https://dev.to/api/articles/${params.id}`),
           },
         ],
       },
